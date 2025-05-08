@@ -4,7 +4,6 @@ function formatString(input: string, toUpper: boolean = true): string {
 }
 
 //problem 2
-
 function filterByRating(
   items: { title: string; rating: number }[]
 ): { title: string; rating: number }[] {
@@ -16,22 +15,13 @@ const books = [
   { title: "Book B", rating: 7.2 },
   { title: "Book C", rating: 3.0 },
 ];
-
-console.log(filterByRating(books));
-
-// // problem 3
+// problem 3
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
   return arrays.reduce((arr1, arr2) => [...arr1, ...arr2], []);
 }
 
-const number = [1, 2, 3];
-const string = ["a", "b", "c"];
-const boolean = [true, false];
-
-console.log(concatenateArrays<number>(number));
-
-// //problem 4
+//problem 4
 
 class Vehicle {
   private make: string;
@@ -58,18 +48,10 @@ class Car extends Vehicle {
     return this.model;
   }
 }
-
-const myCar = new Car("Toyota", 2023, "Camry");
-console.log(myCar.getInfo());
-console.log(myCar.getModel());
-
-// //problem 5
+ //problem 5
 function processValue(value: string | number): number {
   return typeof value === "string" ? value.length : value * 2;
 }
-
-console.log(processValue("hello"));
-console.log(processValue(10));
 
 // Problem 6:
 
@@ -84,15 +66,7 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
   );
 }
 
-const products = [
-  { name: "Pen", price: 10 },
-  { name: "Notebook", price: 25 },
-  { name: "Bag", price: 50 },
-];
-
-console.log(getMostExpensiveProduct(products));
-
-// //problem 7
+//problem 7
 enum Day {
   Monday,
   Tuesday,
@@ -106,9 +80,8 @@ enum Day {
 function getDayType(day: Day): string {
   return day === Day.Saturday || day === Day.Sunday ? "Weekend" : "Weekday";
 }
-console.log(getDayType(Day.Sunday));
 
-// //problem 8:
+ //problem 8:
 async function squareAsync(n: number): Promise<number> {
   if (n < 0) {
     throw new Error("Number cannot be negative");
@@ -116,5 +89,3 @@ async function squareAsync(n: number): Promise<number> {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   return n * n;
 }
-squareAsync(4).then(console.log);
-squareAsync(-3).catch(console.error);
